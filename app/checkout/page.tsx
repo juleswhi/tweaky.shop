@@ -1,5 +1,3 @@
-'use client';
-
 import { AuthProvider } from '../../contexts/AuthContext';
 import { CheckoutRoutes } from '../AppRoutes';
 import { connection } from 'next/server';
@@ -15,5 +13,3 @@ export default async function CheckoutPageWrapper() {
         </AuthProvider>
     );
 }
-
-export const dynamic = 'force-dynamic';
