@@ -34,12 +34,12 @@ export default function ShopPage() {
     const addToCart = useCartStore((s) => s.addToCart);
 
     const [items, setItems] = useState<ShopItem[]>([]);
-    const [selectedId, setSelectedId] = useState<number | null>(null);
+    const [selectedId, setSelectedId] = useState<string | null>(null);
     const [quantity, setQuantity] = useState(1);
     const [money, setMoney] = useState<number | null>(null);
     const [cookie, setCookies] = useState("")
 
-    const selectedItem = items.find((i) => i.id === selectedId);
+    const selectedItem = items.find((i) => i.mcItemId === selectedId);
 
     // Fetch ShopItems
     useEffect(() => {
@@ -117,7 +117,7 @@ export default function ShopPage() {
                                 key={`${item.shopId}-${item.mcItemId}`} // unique key
                                 className="cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-800 transition"
                                 onClick={() => {
-                                    setSelectedId(item.id);
+                                    setSelectedId(item.mcItemId);
                                     setQuantity(1);
                                 }}
                             >
