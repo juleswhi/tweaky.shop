@@ -2,7 +2,7 @@
 import { useAuth } from '@/contexts/AuthContext';
 import PasscodePrompt from '@/components/PasscodePrompt';
 import ShopPage from './ShopPage';
-import CheckoutPage from './checkout/checkout';
+import CheckoutPage from './checkout/cart';
 
 export const AppRoutes: React.FC = () => {
   const { isAuthenticated } = useAuth();

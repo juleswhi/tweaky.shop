@@ -1,17 +1,19 @@
-import { BrowserRouter as Router } from 'react-router-dom';
+'use client';
+
 import { AuthProvider } from '../../contexts/AuthContext';
 import { CheckoutRoutes } from '../AppRoutes';
+import { connection } from 'next/server';
 
+export default async function CheckoutPageWrapper() {
+    await connection()
 
-function App() {
-  return (
-      <AuthProvider>
-        <div className="App">
-          <CheckoutRoutes />
-        </div>
-      </AuthProvider>
-  );
+    return (
+        <AuthProvider>
+            <div className="App">
+                <CheckoutRoutes />
+            </div>
+        </AuthProvider>
+    );
 }
 
-export default App;
-
+export const dynamic = 'force-dynamic';

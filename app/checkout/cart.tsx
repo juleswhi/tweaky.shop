@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react';
 import { Cookies } from 'typescript-cookie';
 
-interface ShopOrder {
+export interface ShopOrder {
   id: number;
   shopId: number;
   mcItemId: string;
