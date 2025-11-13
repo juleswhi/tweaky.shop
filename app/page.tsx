@@ -1,8 +1,18 @@
-import Image from "next/image";
+import { BrowserRouter as Router } from 'react-router-dom';
+import { AuthProvider } from './../contexts/AuthContext';
+import { AppRoutes } from './AppRoutes';
 
-export default function Home() {
+
+function App() {
   return (
-    <div>Hello</div>
+    <Router>
+      <AuthProvider>
+        <div className="App">
+          <AppRoutes />
+        </div>
+      </AuthProvider>
+    </Router>
   );
 }
 
+export default App;

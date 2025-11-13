@@ -12,7 +12,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     {
       icon: <VscHome size={18} />,
       label: 'Shop',
-      onClick: () => router.push('/shop'),
+      onClick: () => router.push('/'),
     },
     {
       icon: <VscCreditCard size={18} />,

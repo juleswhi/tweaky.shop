@@ -19,7 +19,7 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table';
-import { useCartStore } from '../store/cartStore';
+import { useCartStore } from './store/cartStore';
 import { motion, AnimatePresence } from 'framer-motion';
 
 interface ShopItem {

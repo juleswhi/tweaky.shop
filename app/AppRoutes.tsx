@@ -1,9 +1,10 @@
 "use client"
 import { useAuth } from '@/contexts/AuthContext';
 import PasscodePrompt from '@/components/PasscodePrompt';
-import ShopPage from './shop/ShopPage';
+import ShopPage from './ShopPage';
+import CheckoutPage from './checkout/checkout';
 
-const AppRoutes: React.FC = () => {
+export const AppRoutes: React.FC = () => {
   const { isAuthenticated } = useAuth();
 
   if (!isAuthenticated) {
@@ -13,4 +14,13 @@ const AppRoutes: React.FC = () => {
   return <ShopPage />;
 };
 
-export default AppRoutes;
+export const CheckoutRoutes: React.FC = () => {
+    const { isAuthenticated } = useAuth();
+
+    if(!isAuthenticated) {
+        return <PasscodePrompt />
+    }
+
+    return <CheckoutPage />
+};
+
